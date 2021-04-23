@@ -25,9 +25,10 @@
 
 <p align="center">
   <a href="#about">About</a> •
-  <a href="https://kha7iq.github.io/docs-pingme/#/">Documentation</a> •
+  <a href="https://kha7iq.github.io/pingme">Documentation</a> •
   <a href="#supported-services">Supported Services</a> •
   <a href="#install">Install</a> •
+  <a href="#github-action">Github Action</a> •
   <a href="#configuration">Configuration</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#show-your-support">Show Your Support</a> •
@@ -56,6 +57,7 @@ as message. And most of all this serves as a swiss army knife sort of tool which
 - *Slack*
 - *Telegram*
 - *Pushover*
+- *Mattermost*
 
 
 ## Install
@@ -71,7 +73,38 @@ go get -u github.com/kha7iq/pingme
 ```
 
 ### Windows
+```powershell
+scoop bucket add pingme https://github.com/kha7iq/scoop-bucket.git
+scoop install pingme
+```
+
 Alternatively you can head over to [release pages](https://github.com/kha7iq/pingme/releases) and download the binary for windows & all other supported platforms.
+
+
+### Docker
+Docker container is also available on both dockerhub and github container registry.
+
+`latest` tage will always pull the latest version avaialbe, you can also download specific version.
+Checkout [release](https://github.com/kha7iq/pingme/releases) page for available versions.
+
+Docker Registry
+```bash
+docker pull khaliq/pingme:latest
+```
+Gighub Registry
+```bash
+docker pull ghcr.io/kha7iq/pingme:latest
+```
+Run
+```bash
+docker run ghcr.io/kha7iq/pingme:latest
+```
+## Github Action
+
+A github action is also available now for this app, you can find it on [Github Market Place](https://github.com/marketplace/actions/pingme-action) or from this [repository](https://github.com/kha7iq/pingme-action) on github.
+
+Usage examples for workflow are available in the repo.
+
 
 ## Usage
 
@@ -82,13 +115,13 @@ NAME:
    PingMe - Send message to multiple platforms
 
 USAGE:
-   pingme [global options] command [command options] [arguments...]
+   main [global options] command [command options] [arguments...]
 
 DESCRIPTION:
    PingMe is a CLI tool which provides the ability to send messages or alerts to multiple
    messaging platforms and also email, everything is configurable via environment
    variables and command line switches.Currently supported platforms include Slack, Telegram,
-   RocketChat, Discord, Microsoft Teams and email address.
+   RocketChat, Discord, Pushover, Mattermost, Microsoft Teams and email address.
 
 COMMANDS:
    telegram    Send message to telegram
@@ -98,20 +131,21 @@ COMMANDS:
    teams       Send message to microsoft teams
    pushover    Send message to pushover
    email       Send an email
+   mattermost  Send message to mattermost
    help, h     Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
    --help, -h  show help (default: false)
 ```
 
-Check [Documentation Page](https://kha7iq.github.io/docs-pingme/#/) for more details.
+Check [Documentation Page](https://kha7iq.github.io/pingme/#/) for more details.
 
 ## Configuration
 
 All the flags have corresponding environment variables associated with it. You can either provide the value with flags
 or export to a variable.
 
-View the [Documentation Page](https://kha7iq.github.io/docs-pingme/#/) for more details.
+View the [Documentation Page](https://kha7iq.github.io/pingme/#/) for more details.
 
 
 ## Contributing
